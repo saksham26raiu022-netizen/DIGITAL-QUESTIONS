@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int n;
+        scanf("%d", &n);
+
+        // Extract the last digit
+        int last_digit = n % 10;
+
+        // Reduce n until only the first digit remains
+        while (n >= 10) {
+            n /= 10;
+        }
+        int first_digit = n;
+
+        printf("%d\n", first_digit + last_digit);
+    }
+
+    return 0;
+}
