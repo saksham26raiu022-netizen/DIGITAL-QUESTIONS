@@ -1,0 +1,26 @@
+int* gradingStudents(int grades_count, int* grades, int* result_count) {
+    // Set the result count to match the number of grades
+    *result_count = grades_count;
+    
+    // Allocate memory for the resulting array
+    int* rounded_grades = malloc(grades_count * sizeof(int));
+    
+    for (int i = 0; i < grades_count; i++) {
+        int grade = grades[i];
+        
+        // Grades less than 38 do not result in rounding up past a failing grade (40)
+        if (grade >= 38) {
+            int remainder = grade % 5;
+            // If the difference to the next multiple of 5 is less than 3 (i.e., remainder >= 3)
+            if (remainder >= 3) {
+                rounded_grades[i] = grade + (5 - remainder);
+            } else {
+                rounded_grades[i] = grade;
+            }
+        } else {
+            rounded_grades[i] = grade;
+        }
+    }
+    
+    return rounded_grades;
+}
