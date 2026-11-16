@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long factorial = 1;
+
+    // Read the input integer N
+    scanf("%d", &n);
+
+    // Multiply numbers from 1 to N
+    for (int i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+
+    // Print the result
+    printf("%lld\n", factorial);
+
+    return 0;
+}
