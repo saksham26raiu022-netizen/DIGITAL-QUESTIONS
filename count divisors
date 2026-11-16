@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int l, r, k;
+    
+    // Read the three space-separated integers
+    if (scanf("%d %d %d", &l, &r, &k) == 3) {
+        // Count of multiples of k up to r minus multiples up to (l - 1)
+        int count = (r / k) - ((l - 1) / k);
+        
+        // Print the final count
+        printf("%d\n", count);
+    }
+    
+    return 0;
+}
